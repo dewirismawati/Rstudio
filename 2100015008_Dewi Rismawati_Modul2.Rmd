@@ -1,0 +1,159 @@
+---
+title: "Modul2_1-142"
+author: "Dewi Rismawati"
+date: '2022-04-12'
+output: html_document
+---
+
+```{r}
+simpan=read.table("data3.2.csv",header=TRUE, sep=",") #membaca data
+simpan #memanggil data
+
+Tahun=simpan$Tahun
+Jumlah_A=simpan$Jenis.Barang.A
+Jumlah_B=simpan$Jenis.Barang.B
+Jumlah_C=simpan$Jenis.Barang.C
+
+Jumlah_A
+Jumlah_B
+Jumlah_C
+
+plot(Tahun,Jumlah_A)
+
+plot(Tahun,Jumlah_A, type = "o")
+
+plot(Tahun,Jumlah_A, type = "o",col="blue") #These colours can be used in your plots, with col=
+
+plot(Tahun,Jumlah_A, type = "o",col="green")
+
+plot(Tahun,Jumlah_A, type = "o",col="red")
+lines(Tahun,Jumlah_B, type="o",col="blue") #lines() are used to join points with line segments
+
+plot(Tahun,Jumlah_A, type="o", col="red", ylim =c(70,180)) #ylim>>Vector of length 2. Specify the lower and upper bound for the y axis
+lines(Tahun,Jumlah_B, type="o", col="blue")     
+
+plot(Tahun,Jumlah_A, type="o", col="red", ylim =c(40,180))
+lines(Tahun,Jumlah_B, type="o", col="blue")   
+lines(Tahun,Jumlah_C, type="o", col="green")
+
+plot(Tahun,Jumlah_A, type="o", col="red", ylim =c(40,180))
+lines(Tahun,Jumlah_B, type="o",pch=22, col="blue")   
+lines(Tahun,Jumlah_C, type="o", col="green")
+
+plot(Tahun,Jumlah_A, type="o", col="red", ylim =c(40,180))
+lines(Tahun,Jumlah_B, type="o",pch=22, lty=2, col="blue")   
+lines(Tahun,Jumlah_C, type="o", col="green")
+
+plot(Tahun,Jumlah_A, type="o", pch=22, lty=2, col="red", ylim =c(40,180))
+lines(Tahun,Jumlah_B, type="o", pch=22, lty=2, col="blue")   
+lines(Tahun,Jumlah_C, pch=22, lty=2, type="o", col="green")
+
+plot(Tahun,Jumlah_A, type="p", pch=22, lty=2, col="red", ylim =c(40,180))
+lines(Tahun,Jumlah_B, type="p", pch=22, lty=2, col="blue")   
+lines(Tahun,Jumlah_C, pch=22, lty=2, type="p", col="green")
+# lty, line type giving the length of the solid and empty segments
+
+plot(Tahun,Jumlah_A, type="o", pch=22, lty=2, col="red", ylim =c(40,180))
+lines(Tahun,Jumlah_B, type="p", pch=22, lty=2, col="blue")   
+lines(Tahun,Jumlah_C, pch=22, lty=2, type="l", col="green")
+# pch is Either an integer specifying a symbol or a character to replace small circles in point
+
+plot.new()
+plot(Tahun, Jumlah_A, type="o", col="red", ylim=c(40,180))
+lines(Tahun, Jumlah_B, type="o", col="blue")
+lines(Tahun, Jumlah_C, type="o", col="green")
+title(main="Data Penjualan Barang A,B,C dari Tahun 2001-2007", col.main="red", font.main=4) 
+# title used to add titles to a plot
+
+Total = Jumlah_A
+plot.new()
+plot(Tahun, Jumlah_A, type="o", col="red", ylim=c(40,180))
+lines(Tahun, Jumlah_B, type="o", col="blue")
+lines(Tahun, Jumlah_C, type="o", col="green")
+title(main="Data Penjualan Barang A,B,C dari Tahun 2001-2007", col.main="red", font.main=4)
+
+Total = Jumlah_A
+plot.new()
+plot(Tahun, Jumlah_A, type="o", col="red", ylim=c(40,180))
+lines(Tahun, Jumlah_B, type="o", col="blue")
+lines(Tahun, Jumlah_C, type="o", col="green")
+legend(2001,160,c("Jenis Barang A","Jenis Barang B","Jenis Barang C"), cex=0.8, col=c("red","blue","green"),pch=21)
+title(main="Data Penjualan Barang A,B,C dari Tahun 2001-2007", col.main="red", font.main=4)
+# legend used to add a caption to a pre-existing plot
+
+Total = Jumlah_A
+plot.new()
+plot(Tahun, Jumlah_A, type="o", col="red", ylim=c(40,180))
+lines(Tahun, Jumlah_B, type="o", col="blue")
+lines(Tahun, Jumlah_C, type="o", col="green", lty=23)
+legend(2001,160,c("Jenis Barang A","Jenis Barang B","Jenis Barang C"), cex=0.8, col=c("red","blue","green"), lty=30)
+title(main="Data Penjualan Barang A,B,C dari Tahun 2001-2007", col.main="red", font.main=4)
+
+Total = Jumlah_A
+plot.new()
+plot(Tahun, Jumlah_A, type="o", col="red", ylim=c(40,180))
+lines(Tahun, Jumlah_B, type="o", col="blue", lty=23)
+lines(Tahun, Jumlah_C, type="o", col="green", lty=23)
+legend(2001,160,c("Jenis Barang A","Jenis Barang B","Jenis Barang C"), cex=0.8, col=c("red","blue","green"), lty=30)
+title(main="Data Penjualan Barang A,B,C dari Tahun 2001-2007", col.main="red", font.main=4)
+
+Total = Jumlah_A
+plot.new()
+plot(Tahun, Jumlah_A, type="o", col="red", ylim=c(40,180), lty=23)
+lines(Tahun, Jumlah_B, type="o", col="blue", lty=23)
+lines(Tahun, Jumlah_C, type="o", col="green", lty=23)
+legend(2001,160,c("Jenis Barang A","Jenis Barang B","Jenis Barang C"), cex=0.8, col=c("red","blue","green"), lty=30)
+title(main="Data Penjualan Barang A,B,C dari Tahun 2001-2007", col.main="red", font.main=4)
+# cex A numeric value giving the character expansion coefficient for text and symbols on the plot
+
+Total = Jumlah_A
+plot.new()
+plot(Tahun, Jumlah_A, type="o", col="red", ylim=c(40,180), lty=23)
+lines(Tahun, Jumlah_B, type="s", col="blue", lty=23)
+lines(Tahun, Jumlah_C, type="o", col="green", lty=23)
+legend(2001,160,c("Jenis Barang A","Jenis Barang B","Jenis Barang C"), cex=0.8, col=c("red","blue","green"), lty=30)
+title(main="Data Penjualan Barang A,B,C dari Tahun 2001-2007", col.main="red", font.main=4)
+
+Total = Jumlah_A
+plot.new()
+plot(Tahun, Jumlah_A, type="o", col="red", ylim=c(40,180), lty=23)
+lines(Tahun, Jumlah_B, type="l", col="blue", lty=23)
+lines(Tahun, Jumlah_C, type="o", col="green", lty=23)
+legend(2001,160,c("Jenis Barang A","Jenis Barang B","Jenis Barang C"), cex=0.8, col=c("red","blue","green"), lty=30)
+title(main="Data Penjualan Barang A,B,C dari Tahun 2001-2007", col.main="red", font.main=4)
+
+Total = Jumlah_A
+plot.new()
+plot(Tahun, Jumlah_A, type="o", col="red", ylim=c(40,180))
+lines(Tahun, Jumlah_B, type="l", col="blue", lty=23)
+lines(Tahun, Jumlah_C, type="o", col="green", lty=23)
+legend(2001,160,c("Jenis Barang A","Jenis Barang B","Jenis Barang C"), cex=0.8, col=c("red","blue","green"), lty=30)
+title(main="Data Penjualan Barang A,B,C dari Tahun 2001-2007", col.main="red", font.main=4)
+
+Total = Jumlah_A
+plot(Tahun,Total, type="o", col="red",ylim=c(40,180), xaxt="n")
+Axis(at=2001:2007, side = 1, labels = c("A","B","C","D","E","F","G"))
+lines(Tahun, Jumlah_B, type="l", col="blue", lty=23)
+lines(Tahun, Jumlah_C, type="o", col="green", lty=23)
+legend(2001,160,c("Jenis Barang A","Jenis Barang B","Jenis Barang C"), cex=0.8, col=c("red","blue","green"), lty=30)
+title(main="Data Penjualan Barang A,B,C dari Tahun 2001-2007", col.main="red", font.main=4)
+# A character to specify the type of x axis.
+
+Total = Jumlah_A
+plot(Tahun,Total, type="o", col="red",ylim=c(40,180), xaxt="n")
+Axis(at=2001:2007, side = 1, labels = c("Tahun 1","Tahun 2","Tahun 3","Tahun 4","Tahun 5","Tahun 6","Tahun 7"))
+lines(Tahun, Jumlah_B, type="l", col="blue", lty=23)
+lines(Tahun, Jumlah_C, type="o", col="green", lty=23)
+legend(2001,160,c("Jenis Barang A","Jenis Barang B","Jenis Barang C"), cex=0.8, col=c("red","blue","green"), lty=30)
+title(main="Data Penjualan Barang A,B,C dari Tahun 2001-2007", col.main="red", font.main=4)
+# axis add an axis to a plot
+
+Total = Jumlah_A
+plot(Tahun,Total, type="o", col="red",ylim=c(40,180), xaxt="n")
+Axis(at=2001:2007, side = 3, labels = c("Tahun 1","Tahun 2","Tahun 3","Tahun 4","Tahun 5","Tahun 6","Tahun 7"))
+lines(Tahun, Jumlah_B, type="l", col="blue", lty=23)
+lines(Tahun, Jumlah_C, type="o", col="green", lty=23)
+legend(2001,160,c("Jenis Barang A","Jenis Barang B","Jenis Barang C"), cex=0.8, col=c("red","blue","green"), lty=30)
+title(main="Data Penjualan Barang A,B,C dari Tahun 2001-2007", col.main="red", font.main=4)
+
+```
